@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">Animechan</string>
+    <string name="home">Home</string>
+    <string name="search">Search</string>
+    <string name="get_random">Get random quotes</string>
+    <string name="random">Random</string>
+    <string name="search_by">Search by:</string>
+    <string name="anime_title">Anime title</string>
+    <string name="character_name">Character name</string>
 </resources>
