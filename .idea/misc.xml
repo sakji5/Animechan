@@ -3,10 +3,14 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Projects/Android/Animechan/app/src/main/res/drawable/bottom_nav_color.xml" value="0.123" />
+        <entry key="..\:/Projects/Android/Animechan/app/src/main/res/drawable/home_selector.xml" value="0.123" />
+        <entry key="..\:/Projects/Android/Animechan/app/src/main/res/drawable/ic_home.xml" value="0.124" />
+        <entry key="..\:/Projects/Android/Animechan/app/src/main/res/drawable/ic_home_colored.xml" value="0.124" />
         <entry key="..\:/Projects/Android/Animechan/app/src/main/res/layout/activity_main.xml" value="0.2" />
         <entry key="..\:/Projects/Android/Animechan/app/src/main/res/layout/fragment_home.xml" value="0.18432971014492755" />
         <entry key="..\:/Projects/Android/Animechan/app/src/main/res/layout/fragment_random.xml" value="0.18432971014492755" />
-        <entry key="..\:/Projects/Android/Animechan/app/src/main/res/layout/fragment_search.xml" value="0.4" />
+        <entry key="..\:/Projects/Android/Animechan/app/src/main/res/layout/fragment_search.xml" value="0.35" />
         <entry key="..\:/Projects/Android/Animechan/app/src/main/res/menu/bottom_nav_menu.xml" value="0.25416666666666665" />
       </map>
     </option>
