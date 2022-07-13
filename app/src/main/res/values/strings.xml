@@ -8,5 +8,8 @@
     <string name="anime_title">Anime title</string>
     <string name="character_name">Character name</string>
     <string name="retry">Retry</string>
-    <string name="available_anime">Available anime: </string>
+    <string name="available_anime">Anime, quotes from which available: </string>
+    <string name="anime">Anime:\u0020\u0020</string>
+    <string name="character">Character:  \u0020\u0020</string>
+
 </resources>

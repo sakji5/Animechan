@@ -21,7 +21,6 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
     private lateinit var retryButton: Button
 
     private lateinit var viewModel: HomeViewModel
-    private val animeList: MutableList<String> = mutableListOf()
     private lateinit var adapter: HomeRecyclerViewAdapter
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -30,7 +29,7 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         viewModel = ViewModelProvider(this)[HomeViewModel::class.java]
         viewModel.getAnimeList()
 
-        adapter = HomeRecyclerViewAdapter(animeList)
+        adapter = HomeRecyclerViewAdapter(mutableListOf())
 
         initRecyclerView(view)
         initViews(view)
@@ -54,13 +53,10 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         retryButton = view.findViewById(R.id.home_retry_btn)
     }
 
-
-
     private fun observers() {
         viewModel.progressBarState.observe(viewLifecycleOwner) { progressBar.visibility = it }
 
         viewModel.animeList.observe(viewLifecycleOwner) {
-            animeList.addAll(it)
             adapter.addData(it)
             recyclerView.adapter?.notifyDataSetChanged()
         }

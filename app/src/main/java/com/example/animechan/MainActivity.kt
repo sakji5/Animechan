@@ -3,10 +3,9 @@ package com.example.animechan
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.example.animechan.home.ui.HomeFragment
-import com.example.animechan.random.RandomFragment
+import com.example.animechan.random.ui.RandomFragment
 import com.example.animechan.search.SearchFragment
 import android.os.Bundle
-import android.util.Log
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {

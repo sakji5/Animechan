@@ -13,7 +13,9 @@
         <entry key="..\:/Projects/Android/Animechan/app/src/main/res/layout/fragment_search.xml" value="0.35" />
         <entry key="..\:/Projects/Android/Animechan/app/src/main/res/layout/recycker_header_anime.xml" value="0.17300724637681159" />
         <entry key="..\:/Projects/Android/Animechan/app/src/main/res/layout/recycler_header_anime.xml" value="0.11302083333333333" />
+        <entry key="..\:/Projects/Android/Animechan/app/src/main/res/layout/recycler_header_random.xml" value="0.17346014492753623" />
         <entry key="..\:/Projects/Android/Animechan/app/src/main/res/layout/recycler_item_anime.xml" value="0.264" />
+        <entry key="..\:/Projects/Android/Animechan/app/src/main/res/layout/recycler_random_quote_item.xml" value="0.4" />
         <entry key="..\:/Projects/Android/Animechan/app/src/main/res/menu/bottom_nav_menu.xml" value="0.25416666666666665" />
       </map>
     </option>
