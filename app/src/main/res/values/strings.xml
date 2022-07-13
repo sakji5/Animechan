@@ -7,4 +7,6 @@
     <string name="search_by">Search by:</string>
     <string name="anime_title">Anime title</string>
     <string name="character_name">Character name</string>
+    <string name="retry">Retry</string>
+    <string name="available_anime">Available anime: </string>
 </resources>

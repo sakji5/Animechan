@@ -1,14 +1,13 @@
-package com.example.animechan.ui
+package com.example.animechan
 
 import androidx.appcompat.app.AppCompatActivity
-import android.os.Bundle
 import androidx.fragment.app.Fragment
-import com.example.animechan.R
-import com.example.animechan.ui.home.HomeFragment
-import com.example.animechan.ui.random.RandomFragment
-import com.example.animechan.ui.search.SearchFragment
+import com.example.animechan.home.ui.HomeFragment
+import com.example.animechan.random.RandomFragment
+import com.example.animechan.search.SearchFragment
+import android.os.Bundle
+import android.util.Log
 import com.google.android.material.bottomnavigation.BottomNavigationView
-
 
 class MainActivity : AppCompatActivity() {
 
@@ -18,6 +17,8 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        replaceFragment(HomeFragment())
 
         bottomNav = findViewById(R.id.bottom_nav)
         bottomNav.setOnItemSelectedListener {

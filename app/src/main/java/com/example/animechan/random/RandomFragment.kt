@@ -1,4 +1,4 @@
-package com.example.animechan.ui.random
+package com.example.animechan.random
 
 import androidx.fragment.app.Fragment
 import com.example.animechan.R

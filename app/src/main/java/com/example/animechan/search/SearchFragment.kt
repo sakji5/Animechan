@@ -1,4 +1,4 @@
-package com.example.animechan.ui.search
+package com.example.animechan.search
 
 import androidx.fragment.app.Fragment
 import com.example.animechan.R

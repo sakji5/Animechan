@@ -1,9 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools">
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/home_recycler_view"
         android:layout_width="match_parent"
+        tools:listitem="@layout/recycler_item_anime"
+        tools:itemCount="50"
         android:layout_height="match_parent"/>
+
+    <ProgressBar
+        android:id="@+id/home_progress_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:visibility="gone"/>
+
+    <LinearLayout
+        android:id="@+id/home_error_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:visibility="gone"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/home_error_message_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="Some error occurred"
+            android:layout_gravity="center"
+            android:padding="4dp"
+            />
+        <Button
+            android:id="@+id/home_retry_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/retry"/>
+
+    </LinearLayout>
 </FrameLayout>
