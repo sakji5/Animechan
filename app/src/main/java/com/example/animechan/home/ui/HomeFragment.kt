@@ -54,12 +54,11 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         retryButton = view.findViewById(R.id.home_retry_btn)
     }
 
-
-
     private fun observers() {
         viewModel.progressBarState.observe(viewLifecycleOwner) { progressBar.visibility = it }
 
         viewModel.animeList.observe(viewLifecycleOwner) {
+            animeList.clear()
             animeList.addAll(it)
             adapter.addData(it)
             recyclerView.adapter?.notifyDataSetChanged()
