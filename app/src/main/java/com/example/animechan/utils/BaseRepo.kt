@@ -13,17 +13,21 @@ abstract class BaseRepo {
     private val _loading: MutableLiveData<Boolean> = MutableLiveData(false)
     val loading: LiveData<Boolean> = _loading
 
-    protected suspend fun <T> getData(liveData: MutableLiveData<T>,apiRequest: suspend () -> Response<T>){
+    protected suspend fun <T> getData(liveData: MutableLiveData<T>, isPageLoading: Boolean = false,apiRequest: suspend () -> Response<T>){
         try {
-            _loading.value = true
+            if (!isPageLoading) _loading.value = true
             _error.value = ""
             val result = apiRequest()
             result.body().let {
+                if (result.code() != 200) {
+                    throw Exception ("Some error occurred")
+                }
                 liveData.postValue(result.body())
                 _loading.value = false
             }
         } catch (e: Exception) {
             Log.d("error", e.message.toString())
+            _error.value = e.message
             _loading.value = false
         }
     }

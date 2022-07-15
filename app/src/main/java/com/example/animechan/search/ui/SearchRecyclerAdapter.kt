@@ -1,5 +1,6 @@
 package com.example.animechan.search.ui
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -59,17 +60,21 @@ class SearchRecyclerAdapter(private val quotes: MutableList<Quote>) :
         return if (position == quotes.size - 1 && isLoadingAdded) LOADING else ITEM
     }
 
-    fun addLoadingFooter() {
+    fun addLoadingFooter(recyclerView: RecyclerView) {
         isLoadingAdded = true
         quotes.add(Quote("", "", ""))
-        notifyItemInserted(quotes.size - 1)
+        recyclerView.post {
+            notifyItemInserted(quotes.size - 1)
+        }
     }
 
-    fun removeLoadingFooter() {
+    fun removeLoadingFooter(recyclerView: RecyclerView) {
         isLoadingAdded = false
         val position: Int = quotes.size - 1
         if (quotes.isNotEmpty()) quotes.removeAt(position)
-        notifyItemRemoved(position)
+        recyclerView.post {
+            notifyItemRemoved(position)
+        }
     }
 
 }

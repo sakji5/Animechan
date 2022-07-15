@@ -44,9 +44,9 @@ class SearchFragment : BaseFragment(R.layout.fragment_search) {
             this,
             linearLayoutManager,
             false
-        ) { adapter.addLoadingFooter() }
+        ) { adapter.addLoadingFooter(recyclerView) }
 
-         recyclerView.addOnScrollListener(paginationListener)
+        recyclerView.addOnScrollListener(paginationListener)
 
         searchBtn.setOnClickListener {
             adapter.clearData()
@@ -54,8 +54,16 @@ class SearchFragment : BaseFragment(R.layout.fragment_search) {
             searchViewModel.getQuotes(query, toggleButtonGroup.checkedButtonIds)
         }
 
+        retryButton.setOnClickListener {
+            searchViewModel.getQuotes(
+                queryEditText.text.toString(),
+                toggleButtonGroup.checkedButtonIds
+            )
+        }
+
         searchViewModel.quotes.observe(viewLifecycleOwner) {
-            adapter.removeLoadingFooter()
+            paginationListener.isLoading = false
+            adapter.removeLoadingFooter(recyclerView)
             adapter.addData(it)
             adapter.notifyDataSetChanged()
         }

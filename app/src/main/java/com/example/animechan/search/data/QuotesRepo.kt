@@ -1,6 +1,5 @@
 package com.example.animechan.search.data
 
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.example.animechan.RestClient
@@ -15,15 +14,15 @@ class QuotesRepo : BaseRepo () {
     val quotes: LiveData<List<Quote>> = _quotes
 
     suspend fun getQuotesByCharacter (name: String, page: Int) {
-//        getData(_quotes) {
-//            quotesAPI.getQuotesByCharacter(name, page)
-//        }
-        val mock = QuotesMockRepo()
-        _quotes.value =  mock.getQuotes()
+        val isPageLoading = page <= 1
+        getData(_quotes, isPageLoading) {
+            quotesAPI.getQuotesByCharacter(name, page)
+        }
     }
 
     suspend fun getQuotesByAnime (title: String, page: Int) {
-        getData(_quotes) {
+        val isPageLoading = page <= 1
+        getData(_quotes, isPageLoading) {
             quotesAPI.getQuotesByAnime(title, page)
         }
     }

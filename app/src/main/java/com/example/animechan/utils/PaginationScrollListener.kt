@@ -1,5 +1,6 @@
 package com.example.animechan.utils
 
+import android.util.Log
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 

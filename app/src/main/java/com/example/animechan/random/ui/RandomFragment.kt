@@ -19,10 +19,13 @@ class RandomFragment : BaseFragment(R.layout.fragment_random) {
         adapter = RandomRecyclerViewAdapter(mutableListOf(quotesListEmptyItem)){(viewModel as RandomQuoteViewModel).getQuotes() }
 
         viewModel = ViewModelProvider(this)[RandomQuoteViewModel::class.java]
+        val randomViewModel = viewModel as RandomQuoteViewModel
         initRecyclerView(view, R.id.random_recycler_view, adapter, true)
         initViews(view)
 
-        (viewModel as RandomQuoteViewModel).quotes.observe(viewLifecycleOwner) {
+        retryButton.setOnClickListener { randomViewModel.getQuotes() }
+
+        randomViewModel.quotes.observe(viewLifecycleOwner) {
             val data: MutableList<Quote> = mutableListOf()
             data.add(quotesListEmptyItem)
             data.addAll(it)

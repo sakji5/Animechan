@@ -20,7 +20,7 @@ class SearchViewModel : BaseViewModel() {
     private val _quotes: MutableLiveData<List<Quote>> = MutableLiveData()
     val quotes: LiveData<List<Quote>> = _quotes
 
-    private var _currentPage: Int = 0
+    private var _currentPage: Int = 1
     private var previousQueryType: QueryType = QueryType.NONE
     private var previousQueryData: String = ""
 
