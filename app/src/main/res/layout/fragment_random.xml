@@ -10,7 +10,7 @@
         android:id="@+id/random_recycler_view"
         android:layout_width="match_parent"
         tools:itemCount="50"
-        tools:listitem="@layout/recycler_random_quote_item"
+        tools:listitem="@layout/recycler_quote_item"
         android:layout_height="match_parent"/>
 
     <ProgressBar

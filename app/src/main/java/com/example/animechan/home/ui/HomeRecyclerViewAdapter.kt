@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.animechan.R
 
 class HomeRecyclerViewAdapter(private val animeList: MutableList<String>) :
-    RecyclerView.Adapter<HomeRecyclerViewVH>() {
+    RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HomeRecyclerViewVH {
 
@@ -17,7 +17,8 @@ class HomeRecyclerViewAdapter(private val animeList: MutableList<String>) :
         return HomeRecyclerViewVH(inflater)
     }
 
-    override fun onBindViewHolder(holder: HomeRecyclerViewVH, position: Int) {
+    override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
+        (holder as HomeRecyclerViewVH)
         holder.itemTextView.textSize = 16.0F
         if (isHeader(position)){
             holder.itemTextView.text = holder.itemView.context.getString(R.string.available_anime)

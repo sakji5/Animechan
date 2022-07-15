@@ -1,5 +1,6 @@
 package com.example.animechan.utils
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import retrofit2.Response
@@ -16,14 +17,13 @@ abstract class BaseRepo {
         try {
             _loading.value = true
             _error.value = ""
-
             val result = apiRequest()
             result.body().let {
                 liveData.postValue(result.body())
                 _loading.value = false
             }
         } catch (e: Exception) {
-            _error.value = (e.message ?: "some error occurred")
+            Log.d("error", e.message.toString())
             _loading.value = false
         }
     }
